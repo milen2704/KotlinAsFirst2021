@@ -15,6 +15,7 @@ import kotlin.math.*
  */
 fun sqr(x: Int) = x * x
 
+
 /**
  * Пример
  *
@@ -74,7 +75,9 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = hours * 3600 + minute
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double {
+    return (sagenes * 48 + arshins * 16 + vershoks) * 0.04445
+}
 
 /**
  * Тривиальная (1 балл)
@@ -82,7 +85,7 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double = (deg * 0.01745329252 + min * 0.000290888 + sec * 4.8481e-6)
 
 /**
  * Тривиальная (1 балл)
