@@ -129,7 +129,7 @@ fun lcm(m: Int, n: Int): Int = TODO()
  * Взаимно простые числа не имеют общих делителей, кроме 1.
  * Например, 25 и 49 взаимно простые, а 6 и 8 -- нет.
  */
-fun isCoPrime(m: Int, n: Int): Boolean = TODO()
+
 
 /**
  * Средняя (3 балла)
@@ -138,7 +138,15 @@ fun isCoPrime(m: Int, n: Int): Boolean = TODO()
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun revert(n: Int): Int = TODO()
+fun revert(n: Int): Int {
+    var reverse = 0
+    var num = n
+    while (num > 0) {
+        reverse = reverse * 10 + num % 10
+        num /= 10
+    }
+    return reverse
+}
 
 /**
  * Средняя (3 балла)
@@ -149,7 +157,7 @@ fun revert(n: Int): Int = TODO()
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun isPalindrome(n: Int): Boolean = TODO()
+fun isPalindrome(n: Int): Boolean = n == revert(n)
 
 /**
  * Средняя (3 балла)
@@ -159,7 +167,15 @@ fun isPalindrome(n: Int): Boolean = TODO()
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun hasDifferentDigits(n: Int): Boolean = TODO()
+fun hasDifferentDigits(n: Int): Boolean {
+    val digit = n % 10
+    var num = n/ 10
+    while (num>0) {
+        if (num % 10 != digit)return true
+        num / 10
+    }
+    return false
+}
 
 /**
  * Средняя (4 балла)
