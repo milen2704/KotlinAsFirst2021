@@ -2,6 +2,8 @@
 
 package lesson3.task1
 
+import kotlin.math.PI
+import kotlin.math.abs
 import kotlin.math.sqrt
 
 // Урок 3: циклы
@@ -169,9 +171,9 @@ fun isPalindrome(n: Int): Boolean = n == revert(n)
  */
 fun hasDifferentDigits(n: Int): Boolean {
     val digit = n % 10
-    var num = n/ 10
-    while (num>0) {
-        if (num % 10 != digit)return true
+    var num = n / 10
+    while (num > 0) {
+        if (num % 10 != digit) return true
         num / 10
     }
     return false
@@ -186,7 +188,25 @@ fun hasDifferentDigits(n: Int): Boolean {
  * Подумайте, как добиться более быстрой сходимости ряда при больших значениях x.
  * Использовать kotlin.math.sin и другие стандартные реализации функции синуса в этой задаче запрещается.
  */
-fun sin(x: Double, eps: Double): Double = TODO()
+fun sin(x: Double, eps: Double): Double {
+    var res = 0.0
+    var count = 1
+    var num = abs(x) % (2 * PI)
+    if (x < 0) num *= -1
+    val sqrx = num * num
+    var value = num
+    var fact = 1.0
+    var mark = 1
+    while (abs(value) >= eps) {
+        res += value * mark
+        mark *= -1
+        count += 2
+        num *= sqrx
+        fact *= count * (count - 1)
+        value = num / fact
+    }
+    return res
+}
 
 /**
  * Средняя (4 балла)
