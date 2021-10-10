@@ -160,7 +160,19 @@ fun rookOrBishopThreatens(
  * прямоугольным (вернуть 1) или тупоугольным (вернуть 2).
  * Если такой треугольник не существует, вернуть -1.
  */
-fun triangleKind(a: Double, b: Double, c: Double): Int = TODO()
+fun triangleKind(a: Double, b: Double, c: Double): Int {
+    if ((a + b> c) && (c + b > a) && (a + c > b)) {
+        val cosA = (c * c + b * b - a * a) / (2.0 * c * b)
+        val  cosB = (a * a + c * c - b * b) / (2.0 * a * c)
+        val cosC = (a * a + b * b - c * c) / (2.0 * a * b)
+        return when {
+            (cosA > 0) && (cosB> 0) && (cosC> 0) -> 0
+            (cosA == 0.0) || (cosB == 0.0) || (cosC == 0.0) -> 1
+            else -> 2
+        }
+        }
+    return -1
+}
 
 /**
  * Средняя (3 балла)
