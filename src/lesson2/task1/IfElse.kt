@@ -113,7 +113,17 @@ fun whichRookThreatens(
     kingX: Int, kingY: Int,
     rookX1: Int, rookY1: Int,
     rookX2: Int, rookY2: Int
-): Int = TODO()
+): Int {
+    val danger1 = (kingX == rookX1) || (kingY == rookY1)
+    val danger2 = (kingX == rookX2) || (kingY == rookY2)
+    return when {
+        danger1 && danger2 -> 3
+        danger1 -> 1
+        danger2 -> 2
+        else -> 0
+    }
+}
+
 
 /**
  * Простая (2 балла)
