@@ -139,7 +139,18 @@ fun rookOrBishopThreatens(
     kingX: Int, kingY: Int,
     rookX: Int, rookY: Int,
     bishopX: Int, bishopY: Int
-): Int = TODO()
+): Int  {
+    val danger1 = (kingX == rookX) || (kingY == rookY)
+    val danger2 = kotlin.math.abs(kingX - bishopX) == kotlin.math.abs(kingY-bishopY)
+    return when {
+        danger1 && !danger2 -> 1
+        !danger1 && danger2 -> 2
+        danger1 && danger2 -> 3
+        else -> 0
+    }
+}
+
+
 
 /**
  * Простая (2 балла)
