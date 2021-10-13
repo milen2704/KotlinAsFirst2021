@@ -170,6 +170,7 @@ fun isCoPrime(m: Int,n: Int): Boolean = TODO()
 
 
 
+
 /**
  * Средняя (3 балла)
  *
