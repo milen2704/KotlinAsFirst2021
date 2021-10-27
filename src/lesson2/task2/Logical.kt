@@ -2,7 +2,7 @@
 
 package lesson2.task2
 
-import jdk.nashorn.internal.objects.NativeMath.abs
+
 import lesson1.task1.sqr
 import kotlin.math.abs
 
