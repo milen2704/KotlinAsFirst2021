@@ -121,7 +121,7 @@ fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minute
  * Сколько денег будет на счету через 3 года (с учётом сложных процентов)?
  * Например, 100 рублей под 10% годовых превратятся в 133.1 рубля
  */
-fun accountInThreeYears(initial: Int, percent: Int): Double = (1.0+percent+100.0).pow (3) * initial
+fun accountInThreeYears(initial: Int, percent: Int): Double = (1.0 + percent / 100.0).pow(3)* initial
 
 /**
  * Простая (2 балла)
@@ -129,4 +129,4 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = (1.0+percent+100.0
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int = number % 10 * 100 + number % 100 / 10 * 10  + number / 100
+fun numberRevert(number: Int): Int = number % 10 * 100 + number % 100 / 10 * 10 + number / 100
