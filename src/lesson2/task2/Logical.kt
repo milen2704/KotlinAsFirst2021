@@ -5,13 +5,16 @@ package lesson2.task2
 
 
 import kotlin.math.abs
+import kotlin.math.sqrt
 
 /**
  * Пример
  *
  * Лежит ли точка (x, y) внутри окружности с центром в (x0, y0) и радиусом r?
  */
-fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double): Nothing = TODO()
+fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double) =
+    sqrt(x - x0) + sqrt(y - y0) <= sqrt(r)
+
 
 
 /**
