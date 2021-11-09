@@ -1,20 +1,17 @@
 @file:Suppress("UNUSED_PARAMETER")
 
 package lesson2.task2
-
-
-
 import kotlin.math.abs
-import kotlin.math.sqrt
+import lesson1.task1.sqr
+
 
 /**
  * Пример
  *
  * Лежит ли точка (x, y) внутри окружности с центром в (x0, y0) и радиусом r?
  */
-fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double) =
-    sqrt(x - x0) + sqrt(y - y0) <= sqrt(r)
-
+fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double) : Boolean =
+    sqr(x - x0) + sqr(y - y0) <= sqr(r)
 
 
 /**
@@ -60,26 +57,25 @@ fun daysInMonth(month: Int, year: Int): Int {
 }
 
 
+/**
+ * Простая (2 балла)
+ *
+ * Проверить, лежит ли окружность с центром в (x1, y1) и радиусом r1 целиком внутри
+ * окружности с центром в (x2, y2) и радиусом r2.
+ * Вернуть true, если утверждение верно
+ */
+fun circleInside(
+    x1: Double, y1: Double, r1: Double,
+    x2: Double, y2: Double, r2: Double
+): Boolean = sqr(sqr(x1 - x2) + sqr(y1 - y2)) + r1 <= r2
 
-    /**
-     * Простая (2 балла)
-     *
-     * Проверить, лежит ли окружность с центром в (x1, y1) и радиусом r1 целиком внутри
-     * окружности с центром в (x2, y2) и радиусом r2.
-     * Вернуть true, если утверждение верно
-     */
-    fun circleInside(
-        x1: Double, y1: Double, r1: Double,
-        x2: Double, y2: Double, r2: Double
-    ): Boolean = TODO()
-
-    /**
-     * Средняя (3 балла)
-     *
-     * Определить, пройдет ли кирпич со сторонами а, b, c сквозь прямоугольное отверстие в стене со сторонами r и s.
-     * Стороны отверстия должны быть параллельны граням кирпича.
-     * Считать, что совпадения длин сторон достаточно для прохождения кирпича, т.е., например,
-     * кирпич 4 х 4 х 4 пройдёт через отверстие 4 х 4.
-     * Вернуть true, если кирпич пройдёт
-     */
-    fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean = TODO()
+/**
+ * Средняя (3 балла)
+ *
+ * Определить, пройдет ли кирпич со сторонами а, b, c сквозь прямоугольное отверстие в стене со сторонами r и s.
+ * Стороны отверстия должны быть параллельны граням кирпича.
+ * Считать, что совпадения длин сторон достаточно для прохождения кирпича, т.е., например,
+ * кирпич 4 х 4 х 4 пройдёт через отверстие 4 х 4.
+ * Вернуть true, если кирпич пройдёт
+ */
+fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean = TODO()
