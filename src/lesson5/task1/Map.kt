@@ -2,8 +2,6 @@
 
 package lesson5.task1
 
-import ru.spbstu.kotlin.typeclass.classes.defaultValue
-
 // Урок 5: ассоциативные массивы и множества
 // Максимальное количество баллов = 14
 // Рекомендуемое количество баллов = 9
@@ -229,7 +227,14 @@ fun canBuildFrom(chars: List<Char>, word: String): Boolean = TODO()
  * Например:
  *   extractRepeats(listOf("a", "b", "a")) -> mapOf("a" to 2)
  */
-fun extractRepeats(list: List<String>): Map<String, Int> = TODO()
+fun extractRepeats(list: List<String>): Map<String, Int> {
+    val map = mutableMapOf<String, Int>()
+    for (i in list) {
+        if (i in map) map[i] = map[i]!! + 1
+        else map[i] = 1
+    }
+    return map.filter {it.value > 1}
+}
 
 /**
  * Средняя (3 балла)
