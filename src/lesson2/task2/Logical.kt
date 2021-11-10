@@ -1,8 +1,10 @@
 @file:Suppress("UNUSED_PARAMETER")
 
 package lesson2.task2
-import kotlin.math.abs
 import lesson1.task1.sqr
+import kotlin.math.abs
+import kotlin.math.max
+import kotlin.math.min
 
 
 /**
@@ -10,7 +12,7 @@ import lesson1.task1.sqr
  *
  * Лежит ли точка (x, y) внутри окружности с центром в (x0, y0) и радиусом r?
  */
-fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double) : Boolean =
+fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double) =
     sqr(x - x0) + sqr(y - y0) <= sqr(r)
 
 
@@ -78,4 +80,14 @@ fun circleInside(
  * кирпич 4 х 4 х 4 пройдёт через отверстие 4 х 4.
  * Вернуть true, если кирпич пройдёт
  */
-fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean = TODO()
+fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean {
+    val minValue = min(r, s)
+    val maxValue = max(r, s)
+    val minSize = minOf(a, b, c)
+    val avgSize = when (minSize) {
+        a -> min(b, c)
+        b -> min(a, c)
+        else -> min(a, b)
+    }
+    return (minSize <= minValue) && (avgSize <= maxValue)
+}

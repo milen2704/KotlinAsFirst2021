@@ -10,6 +10,14 @@
 
     <name>kfirst</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>ru.spbstu</groupId>
+            <artifactId>kfirst</artifactId>
+            <version>21.0.0</version>
+        </dependency>
+    </dependencies>
+
     <repositories>
         <repository>
             <id>github-kotlin-polytech-kotlin-maven</id>
