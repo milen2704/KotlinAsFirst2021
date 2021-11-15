@@ -129,8 +129,9 @@ fun containsIn(a: Map<String, String>, b: Map<String, String>): Boolean = a.keys
  *     -> a changes to mutableMapOf() aka becomes empty
  */
 fun subtractOf(a: MutableMap<String, String>, b: Map<String, String>) {
-    for ((key, value) in b)
+    for ((key, value) in b) {
         if (value == a[key]) a.remove(key)
+    }
 }
 
 /**
@@ -163,7 +164,7 @@ fun mergePhoneBooks(mapA: Map<String, String>, mapB: Map<String, String>): Map<S
     val map = mapA.toMutableMap()
     for ((key, value) in mapB)
         if ((key in map) && (map[key] != value)) map[key] += ", $value"
-    else map += key to value
+        else map += key to value
     return map
 }
 
@@ -206,7 +207,7 @@ fun findCheapestStuff(stuff: Map<String, Pair<String, Double>>, kind: String): S
     var resName: String? = null
     var minCost: Double? = null
     for ((name, info) in stuff)
-        if((info.first == kind) && ((minCost == null) || (info.second < minCost))) {
+        if ((info.first == kind) && ((minCost == null) || (info.second < minCost))) {
             minCost = info.second
             resName = name
         }
@@ -239,10 +240,10 @@ fun canBuildFrom(chars: List<Char>, word: String): Boolean = TODO()
 fun extractRepeats(list: List<String>): Map<String, Int> {
     val map = mutableMapOf<String, Int>()
     for (i in list) {
-        if (i in map) map[i] = map[i]!! + 1
-        else map[i] = 1
+        if (i in map) {
+        } else map[i] = 1
     }
-    return map.filter {it.value > 1}
+    return map.filter { it.value > 1 }
 }
 
 /**
