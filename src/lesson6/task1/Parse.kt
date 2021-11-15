@@ -174,7 +174,9 @@ fun bestLongJump(jumps: String): Int {
 fun bestHighJump(jumps: String): Int {
     val correctChars = setOf('+', '%', '-')
     val parts = jumps.split(' ')
-    if (parts.size % 2 !=0) return -1
+    if (parts.size % 2 != 0) {
+        return -1
+    }
     var bestResult = -1
     for (i in parts.indices step 2 ) {
         val result = parts[i].toIntOrNull() ?: return -1
