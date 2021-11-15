@@ -201,11 +201,11 @@ fun factorize(n: Int): List<Int> {
     var num = n
     val list = mutableListOf<Int>()
     while (num > 1) {
-    while (num % factor == 0) {
-        list.add(factor)
-        num /= factor
-    }
-    factor++
+        while (num % factor == 0) {
+            list.add(factor)
+            num /= factor
+        }
+        factor++
     }
     return list
 }
@@ -228,7 +228,7 @@ fun factorizeToString(n: Int): String = factorize(n).joinToString(separator = "*
  */
 fun convert(n: Int, base: Int): List<Int> {
     var num = n
-    val list = mutableListOf<Int> ()
+    val list = mutableListOf<Int>()
     do {
         list.add(0, num % base)
         num /= base
@@ -250,7 +250,7 @@ fun convert(n: Int, base: Int): List<Int> {
  */
 fun convertToString(n: Int, base: Int): String {
     val alf = "abcdefghijklmnopqrstuvwxyz"
-    return convert (n, base).joinToString(
+    return convert(n, base).joinToString(
         separator = "",
         transform = { if (it < 10) "$it" else alf[it - 10].toString() }
     )
